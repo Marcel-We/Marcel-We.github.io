@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Gartenplaner 2.0 AR</title>
-  <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Gartenplaner 2.0 AR</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
  
-  <style>
-    *{
-      marging: 0;
-      padding: 0;
-    }
-    .demo{
-      heigth: 100%;
-      width: 100%
-      }
-      .demo model-viewer{
-        width: 100%;
-        heigth: 100%;
-      }
-  </style>
+  
  </head>
  
  <body>
+    <nav>
+        <ul class="topnav" id="dropdownClick">
+            <li class="dropdownIcon"><a href="javascript:void(0)" onclick="dropdownMenu()"> &#9776;</a></li>
+            <li class="right"><a href="#AR Modelviewer">AR Modelviewer</a></li>
+            <li><a href="https://www.obi.de/">OBI.de</a></li>
+            <li><a href="https://www.obi.de/gartenplaner/">Gartenplaner</a></li>
+        </ul>
+    </nav>
+    <script>
+    function dropdownMenu() {
+        var id = document.getElementById("dropdownClick");
+        if (id.className === "topnav") {
+        id.className += " responsive";
+        } else {
+            id.className = "topnav";
+        }
+    }
+                
+    </script> 
+     
     <div class="demo">
-      <model-viewer src="models/Odyssey.glb" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls  ios-src="models/Odyssey.usdz">   </model-viewer>
+      <model-viewer src="models/Odyssey.glb" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls  ios-src="models/Odyssey.usdz"></model-viewer>
     </div>
+     <hr>
     <div class="demo">
         <model-viewer src="models/view_transfer_playground.glb" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls  ios-src="models/usdz_playground.usdz"></model-viewer>
     </div>
+     <hr>
     <div class="demo">
         <model-viewer src="models/sample_terrasse.glb" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls  ios-src="models/sample_terrasse.usdz"></model-viewer>
     </div>
